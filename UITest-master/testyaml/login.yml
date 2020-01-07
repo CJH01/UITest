@@ -1,0 +1,35 @@
+testinfo:
+      - id: test_login001
+        title: 登录测试
+        info: 打开抽屉首页
+
+testcase:
+      - element_info: login_btn
+        find_type: ID
+        operate_type: click
+        info: 打开登录对话框
+
+      - element_info: //input[@class='input login-phone']
+        find_type: XPATH
+        operate_type: send_keys
+        info: 输入手机号
+
+      - element_info: //input[@class='input pwd-input pwd-input-active pwd-password-input']
+        find_type: XPATH
+        operate_type: send_keys
+        info: 输入密码
+
+      - element_info: //input[@class='input user-name']
+        find_type: XPATH
+        operate_type: send_keys
+        info: 输入用户名
+
+      - element_info: //button[@class='btn-large login-btn']
+        find_type: XPATH
+        operate_type: click
+        info: 点击登录按钮
+
+check:
+      - element_info: //div[@class='box-mobilelogin']/div[1]/span
+        find_type: XPATH
+        info: 检查输入手机号或密码，登录异常提示

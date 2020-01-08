@@ -1,0 +1,72 @@
+testinfo: 
+      - id: test_setup001
+        title: 首页----设置
+        info: 打开设置页面
+       
+testcase:
+      - element_info: //img[@class='avatar-icon']
+        find_type: XPATH
+        operate_type: perform
+        info: 鼠标悬停账户菜单
+      - element_info: 设置
+        find_type: link_text
+        operate_type: click
+        info: 选择设置
+      - element_info: 编辑
+        find_type: link_text
+        operate_type: click
+        info: 点击编辑，进入编辑状态
+      - element_info: //input[@class='nick input-text']
+        find_type: XPATH
+        operate_type: clear
+        info: 昵称文本框
+      - element_info: //input[@class='sign input-text']
+        find_type: XPATH
+        operate_type: clear
+        info: 签名文本框
+      - element_info: female
+        find_type: ID
+        operate_type: click
+        info: 性别女
+      - element_info: male
+        find_type: ID
+        operate_type: click
+        info: 性别男
+      - element_info: proveSelect
+        find_type: id
+        operate_type: click
+        info: 设置省份或直辖市
+      - element_info: citySelect
+        find_type: id
+        operate_type: click
+        info: 设置城市或地区
+      - element_info: 保存
+        find_type: link_text
+        operate_type: click
+        info: 保存
+      - element_info: 取消
+        find_type: link_text
+        operate_type: click
+        info: 取消
+      - element_info: //div[@class='select-current select-country profile-select-city']
+        find_type: XPATH
+        operate_type: click
+        info: 弹出省份
+      - element_info: //div[@class='select-current select-country profile-sheck-area']
+        find_type: XPATH
+        operate_type: click
+        info: 弹出地区
+      - element_info: //*[@id="proveSelect"]/ul/li
+        find_type: XPATH
+        operate_type: click
+        info: 北京
+      - element_info: 退出
+        find_type: link_text
+        operate_type: click
+        info: 退出登录
+
+check:
+      - element_info: //span[@class='tips-top-text']
+        find_type: XPATH
+     
+     

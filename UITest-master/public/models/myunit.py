@@ -10,11 +10,10 @@ class MyTest(unittest.TestCase):
     """
     自定义MyTest类
     """
+    def setUp(self) :
+        self.driver = browser()
+        self.driver.implicitly_wait(10)
+        self.driver.maximize_window()
 
-    def setUpClass(cls) :
-        cls.driver = browser()
-        cls.driver.implicitly_wait(10)
-        cls.driver.maximize_window()
-
-    def tearDownClass(cls):
-        cls.driver.quit()
+    def tearDown(self):
+        self.driver.quit()

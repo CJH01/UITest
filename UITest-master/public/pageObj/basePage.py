@@ -38,7 +38,6 @@ class BasePage(object):
     #打开登录页面
     def _open(self):
         url = self.base_url
-        print(url)
         self.driver.get(url)
 
     #定义open方法
@@ -53,6 +52,30 @@ class BasePage(object):
         except:
             log.error("{0}页面中未能找到{1}元素".format(self,loc))
 
-    #找一个元素
     def find_element(self, *loc):
-        return self.driver.find_element(*loc)
+        """
+        定位单个元素
+        :param loc:
+        :return:
+        """
+        try:
+            WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(loc))
+            return self.driver.find_element(*loc)
+        except:
+            log.error("{0}页面中未能找到{1}元素".format(self,loc))
+
+    def switch_frame(self,loc):
+        """
+        多表单嵌套切换
+        :param loc:
+        :return:
+        """
+        try:
+            return self.driver.switch_to_frame(loc)
+        except NoSuchFrameException as msg:
+            log.error("查找iframe异常->{0}".format(msg))
+
+    def find_select(self,*loc):
+        return self.driver.find_element_by_css_selector(*loc)
+
+

@@ -75,5 +75,5 @@ class getyaml:
 
 
 if __name__ == '__main__':
-    path = 'D:/PythonProject/pythonSelenium/UIMaster/testyaml/login.yml'
-    print(getyaml(path).get_elementinfo(1))
+    path = 'D:/PythonProject/pythonSelenium/UIMaster/testyaml/mysetup.yml'
+    print(getyaml(path).alldata())

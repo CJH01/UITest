@@ -1,0 +1,58 @@
+#-
+#  id: test_login001.1
+#  detail: 手机号和密码为空
+#  screenshot: phone_pwd_empt
+#  data:
+#    phone: ""
+#    password: ""
+#  check:
+#    - 手机号不能为空
+#
+#-
+#  id: test_login001.2
+#  detail: 手机号为空
+#  screenshot: phone_empt
+#  data:
+#    phone: ""
+#    password: "aa"
+#  check:
+#    - 手机号不能为空
+#-
+#  id: test_login001.2
+#  detail: 密码格式错误
+#  screenshot: pwd_type_error
+#  data:
+#    phone: "15071196254"
+#    password: "aa"
+#  check:
+#    - 密码6~16位数字、大小写字母或常用符号
+#
+#-
+#  id: test_login001.3
+#  detail: 手机号格式错误
+#  screenshot: phone_type_error
+#  data:
+#    phone: "150"
+#    password: "aa"
+#  check:
+#    - 手机号格式错误
+
+-
+  id: test_login001.1
+  detail: 手机号和密码不匹配
+  screenshot: phone_or_pwd_error
+  data:
+    phone: "15071196254"
+    password: "c1231212122"
+  check:
+    - 手机号或密码错误
+
+-
+  id: test_login001.2
+  detail: 手机号和密码正确
+  screenshot: phone_and_pwd_success
+  data:
+    phone: "15071196254"
+    password: "cjh13006182363"
+  check:
+    - login_btn

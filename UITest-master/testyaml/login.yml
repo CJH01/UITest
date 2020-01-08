@@ -29,7 +29,22 @@ testcase:
         operate_type: click
         info: 点击登录按钮
 
-check:
-      - element_info: //div[@class='box-mobilelogin']/div[1]/span
+      - element_info: 用户名登录
+        find_type: link_text
+        operate_type: click
+        info: 点击用户名登录
+
+      - element_info: 忘记密码
+        find_type: link_text
+        operate_type: click
+        info: 忘记密码
+
+      - element_info: //img[@class='avatar-icon']
         find_type: XPATH
-        info: 检查输入手机号或密码，登录异常提示
+        operate_type: perform
+        info: 鼠标悬停账户菜单
+
+check:
+      - element_info: //div[@class='new-dialog-tips dialog-common-warn-tips']
+        find_type: XPATH
+        info: 登陆失败
